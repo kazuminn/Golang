@@ -7,27 +7,27 @@ import (
 )
 
 type Car struct {
-	id int
+	id    int
 	brand string
-	cc float64
-	now int
+	cc    float64
+	now   int
 }
 
 type CarInterface interface {
 	run()
 }
 
-func (c *Car) run(cc float64) () {
+func (c *Car) run(cc float64) {
 	c.now = c.now + int(math.Sqrt(cc))
 }
-func main(){
+func main() {
 
 	cars := []*Car{
-		{1,"toyota",100,0},
-		{2,"suzuki",200,0},
+		{1, "toyota", 100, 0},
+		{2, "suzuki", 200, 0},
 	}
 
-	for i := 1;i < 10;i++ {
+	for i := 1; i < 10; i++ {
 		for _, a := range cars {
 			a.run(a.cc)
 			fmt.Println("car " + a.brand + "is " + strconv.Itoa(a.now) + "m")
