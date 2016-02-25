@@ -7,6 +7,12 @@ import (
 	"io"
 )
 
+/*
+Usage:
+1.replace <user name> and <password>
+2.execute shell #go run ssh.go <command>
+*/
+
 func main(){
 	sshConfig := &ssh.ClientConfig{
 		User: "<user name>",
